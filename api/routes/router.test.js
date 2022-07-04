@@ -21,4 +21,15 @@ describe('Test User Routers', () => {
             expect(response.body.metadata.lastName).toEqual('Russin');
         });
     });
+
+    test('Get -  User Profile', async () => {
+        await request(app)
+        .get('/profile')
+        .expect(200)
+        .then(response => {
+            expect(response.body.message).toEqual('User Profile - GET');
+            expect(response.body.metadata.hostname).toEqual('127.0.0.1');
+            expect(response.body.metadata.method).toEqual('GETi');
+        });
+    });
 });
