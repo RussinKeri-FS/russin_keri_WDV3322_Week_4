@@ -32,6 +32,7 @@ describe('', () => {
         // expect
         expect(user.firstName).toBe('Keri');
         expect(user.lastName).toBe('Russin');
+        expect(user.city).not.toBe('Cleveland');
     });
 
     test ('find user', async () => {
@@ -41,6 +42,7 @@ describe('', () => {
         //expect
         expect(login.firstName).toBe('Keri');
         expect(login.lastName).toBe('Russin');
+        expect(login.zip).not.toBe('12345')
     });
 });
 
