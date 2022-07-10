@@ -1,13 +1,23 @@
 // Require mongoose
 const mongoose = require('mongoose');
-const user = require('../api/model/user');
+const User = require('../api/model/user');
 
-const findUser = async (object) => {
-    return await userInfo.find(object);
+// 'mongobd://localhost:27017/users'
+
+const connect = async () => {
+    await mongoose.connect();
 };
 
-const saveUser = async (newUser) => {
-    return newUser.save();
+const findUser = async (email) => {
+    return await User.findOne({ email: email }).exec();
 };
 
-module.exports = { findUser, saveUser };
+const saveUser = async (user) => {
+    return await user.save();
+};
+
+const disconnect = async () => {
+    await mongoose.connection.close();
+}
+
+module.exports = { connect, findUser, saveUser, disconnect };
