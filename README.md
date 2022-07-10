@@ -1,6 +1,7 @@
 # russin_keri_WDV_3322
 
 ### Week 1: **<u>1.4 - Modularization Assignment</u>**
+
 **On this assignment you are going to create your modules so you can write a User Object to the database:**
 
 /signup (POST) - return hardcoded response
@@ -29,8 +30,10 @@ password
 
 <br>
 
-### Week 2: 
+### Week 2:
+
 ### **<u>2.4 - API Assignment</u>**
+
 **On this assignment you are going to create your API that will write a User Object to the database. Use the previous video as your guide. WARNING: Passwords should be hashed.**
 
 /signup (POST) - writes to database
@@ -56,6 +59,17 @@ email
 password
 
 ### **<u>2.6 - Unit Test Assignment</u>**
+
 For this assignment you will write unit test using Jest for your database functions. Follow along in the previous unit test lesson if you get tripped up.
 
-****Make sure your test are meaningful tests. That means test against your response and status codes. DO NOT WRITE TEST AGAINST THE RESPONSE TIME!!**
+\***\*Make sure your test are meaningful tests. That means test against your response and status codes. DO NOT WRITE TEST AGAINST THE RESPONSE TIME!!**
+
+<br>
+
+### Week 3:
+
+### **<u>3.2 - JWT Posting</u>**
+
+### **<u>3.4 - JWT Integration Assignment</u>**
+
+### **<u>3.6 - Postman Test Assignment</u>**
