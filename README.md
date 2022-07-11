@@ -71,5 +71,9 @@ For this assignment you will write unit test using Jest for your database functi
 ### **<u>3.2 - JWT Posting</u>**
 
 ### **<u>3.4 - JWT Integration Assignment</u>**
+Use the previous video as a guide to complete this assignment.
+You will add JWT to your code and test in postman.
+
+<br>
 
 ### **<u>3.6 - Postman Test Assignment</u>**

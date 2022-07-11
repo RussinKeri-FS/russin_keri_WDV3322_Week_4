@@ -11,9 +11,9 @@ const checkAuth = require('../../auth/checkAuth');
 
 router.use(express.json());
 
-router.get("/profile", checkAuth,  (req, res, next) => {
+router.get('/profile', checkAuth,  (req, res, next) => {
   res.status(200).json({ 
-    message: decoded 
+    result: req.userData, 
   });
 });  
 
