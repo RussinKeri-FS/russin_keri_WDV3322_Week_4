@@ -12,7 +12,7 @@ User Not Found    400
 <br>
 Unauthorized    401
 <br>
-User Exist    409
+User Exists    409
 
 <br>
 

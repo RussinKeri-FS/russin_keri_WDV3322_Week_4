@@ -6,14 +6,14 @@ const User = require('../model/user');
 const mongoose = require('mongoose');
 require('dotenv').config();
 const jwt = require('jsonwebtoken');
+const checkAuth = require('../../auth/checkAuth');
 
 
 router.use(express.json());
 
-router.get("/profile", (req, res, next) => {
-    res.status(200).json({
-      message: "Welcome, Login Successful",
-      result: req.userData
+router.get("/profile", checkAuth,  (req, res, next) => {
+  res.status(200).json({ 
+    message: decoded 
   });
 });  
 
@@ -80,37 +80,55 @@ router.post('/signup', (req, res, next) => {
 });
   
 router.post('/login', (req, res, next) => {
-  // find user email
+// find user
   findUser(req.body.email)
   .then((user) => {
-    // if user not found
-    if(!user) {
-    // return error message
-      res.status(401).json({
+    //if no user is found
+    if (!user) {
+      // return error message
+      req.status(401).json({
         message: 'Unauthorized'
-      })
-     //compare passwords 
-    }  else {
-      bcrypt.compare(req.body.password, user.password, (err, result) => {
-      // test error
-        if(err) return res.status(501).json({ message: err.message });
-      // test result
-        if(user) {
-      // message authorization successful
-          res.status(200).json({
-            message: 'Login Successful',
-            method: req.method,
-            firstName: user.firstName,
-            lastName: user.lastName,
-          });
-        } else {
-          res.status(401).json({
-            message: 'Authorization Failed',
-            result: result,
-          });
-        }
       });
     }
+    // compare passwords
+    bcrypt.compare(req.body.password, user.password, (err, result) => {
+      // test error
+      if (err) return res.status(501).json({ message: err.message });
+      // test result
+      if (result) {
+        const name = user.firstName;
+        const email = req.body.email;
+        const password = result.password;
+        // create token
+        const token = jwt.sign(
+          {
+            name: name,
+            email: email,
+            password: password,
+          },
+          process.env.jwt_key
+        );
+        // message authorization successful
+        // send back payload token (token: token)
+        res.status(200).json({
+          message: 'Authorization Successful',
+          name: name,
+          token: token,
+        });
+      } else {
+        res.status(409).json({
+          message: 'User Exists',
+        });
+      }
+    });
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(500).json({
+      error: {
+        message: 'Login Unsuccessful',
+      },
+    });
   });
   }); 
 
