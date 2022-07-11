@@ -5,14 +5,15 @@ const bcrypt = require('bcrypt');
 const User = require('../model/user');
 const mongoose = require('mongoose');
 require('dotenv').config();
-
+const jwt = require('jsonwebtoken');
 
 
 router.use(express.json());
 
 router.get("/profile", (req, res, next) => {
     res.status(200).json({
-      message: "User Profile - GET",
+      message: "Welcome, Login Successful",
+      result: req.userData
   });
 });  
 
