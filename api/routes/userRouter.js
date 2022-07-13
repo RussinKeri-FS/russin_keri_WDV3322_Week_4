@@ -13,7 +13,7 @@ router.use(express.json());
 
 router.get('/profile', checkAuth,  (req, res, next) => {
   res.status(200).json({ 
-    result: req.userData, 
+    message: req.userData, 
   });
 });  
 
