@@ -68,8 +68,6 @@ For this assignment you will write unit test using Jest for your database functi
 
 ### Week 3:
 
-### **<u>3.2 - JWT Posting</u>**
-
 ### **<u>3.4 - JWT Integration Assignment</u>**
 Use the previous video as a guide to complete this assignment.
 You will add JWT to your code and test in postman.
@@ -77,3 +75,30 @@ You will add JWT to your code and test in postman.
 <br>
 
 ### **<u>3.6 - Postman Test Assignment</u>**
+In this assignment you will create ALL the Postman Tests for your API.
+
+/signup - POST
+/login - POST
+/profile - GET
+Use Postman to create your requests and tests. Create environment (Dev) and variables to store the email, password, token.
+
+You will need to create a dynamic email address every time.
+
+Your test should run over and over without FAILS!!!
+
+**Make sure your test are meaningful tests. That means test against your response and status codes. DO NOT WRITE TEST AGAINST THE RESPONSE TIME!!**
+
+<br>
+
+### Week 4
+
+### **<u>4.3 - Frontend Assignment</u>**
+Your assignment is to run the Github frontend against your backend. It should work like the video.
+
+Some message may not show as in the previous video and that's okay.
+
+I want to see if you signup it is written to the database and you can login and go to the profile page.
+
+<br>
+
+### **<u>Assignment Name Here</u>**
