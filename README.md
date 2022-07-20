@@ -101,4 +101,12 @@ I want to see if you signup it is written to the database and you can login and 
 
 <br>
 
-### **<u>Assignment Name Here</u>**
+### **<u>4.6 Swagger Assignment</u>**
+In this assignment you will be writing documentation for your API.
+
+You will use Swagger to document:
+
+/signup - POST
+/login - POST
+/profile - GET
+**These 3 must show up in your UI and be fully functional.**
