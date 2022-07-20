@@ -4,9 +4,8 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const userRouter = require('../api/routes/userRouter');
 require('dotenv').config();
-const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUI = require('swagger-ui-express');
-const options = require('../config/swaggerOptions');
+const swaggerDocs = require('../config/swaggerOptions.json');
 
 // add middleware
 app.use(cors());
@@ -28,7 +27,7 @@ app.get('/', (req,res) => {
 // routes
 app.use('/users', userRouter);
 
-const swaggerDocs = swaggerJsDoc(options);
+
 console.log(swaggerDocs);
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs));
 

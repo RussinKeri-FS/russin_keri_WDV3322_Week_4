@@ -38,7 +38,7 @@ router.use(express.json());
 
 router.get("/profile", checkAuth, (req, res, next) => {
   res.status(200).json({
-    message: `Welcome, ${req.userData.name}`,
+    message: `Welcome ${req.userData.name}`,
     result: req.userData,
   });
 });

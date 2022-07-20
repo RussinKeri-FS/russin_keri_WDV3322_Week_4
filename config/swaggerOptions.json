@@ -1,0 +1,178 @@
+{
+    "openapi": "3.0.2",
+    "info": {
+        "title": "Post API Docs",
+        "version": "1.0.0",
+        "contact": {
+            "name": "Keri Russin",
+            "email": "karussin@student.fullsail.edu"
+        }
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3001/users",
+            "description": "Local Server"
+        }
+    ],
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        }
+    },
+    "security": [
+        {
+            "bearerAuth": []
+        }
+    ],
+    "paths": {
+        "/signup": {
+            "post": {
+                "tags": [
+                    "Signup"
+                ],
+                "summary": "Signup New User",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "firstName": {
+                                        "type": "string",
+                                        "default": ""
+                                    },
+                                
+                                    "lastName": {
+                                        "type": "string",
+                                        "default": ""
+                                    },
+                                
+                                    "email": {
+                                        "type": "string",
+                                        "default": ""
+                                    },
+                                
+                                    "password": {
+                                        "type": "string",
+                                        "default": ""
+                                    },
+                                
+                                    "address": {
+                                        "type": "string",
+                                        "default": ""
+                                    },
+                                
+                                    "city": {
+                                        "type": "string",
+                                        "default": ""
+                                    },
+                                
+                                    "state": {
+                                        "type": "string",
+                                        "default": ""
+                                    },
+                                
+                                    "zip": {
+                                        "type": "string",
+                                        "default": ""
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "New User Created"
+                    },
+                    "201": {
+                        "description": "New User Created"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "User Not Created"
+                    },
+                    "501": {
+                        "description": "User Not Created"
+                    }
+                }
+            }
+        },
+        "/login": {
+            "post": {
+                "tags": [
+                    "Login"
+                ],
+                "summary": "User Login",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "default": ""
+                                    },
+                                
+                                    "password": {
+                                        "type": "string",
+                                        "default": ""
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Login Successful"
+                    },
+                    "201": {
+                        "description": "Login Successful"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Login Unsuccessful"
+                    },
+                    "501": {
+                        "description": "Login Unsuccessful"
+                    }
+                } 
+            }
+        },
+        "/profile": {
+            "get": {
+                "tags": [
+                    "Profile"
+                ],
+                "summary": "User Profile",
+                "responses": {
+                    "200": {
+                        "description": "Authorization Successful"
+                    },
+                    "201": {
+                        "description": "Authorization Successful"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Unauthorized Access"
+                    },
+                    "501": {
+                        "description": "Unauthorized Access"
+                    }
+                } 
+            }
+        }
+    }
+}
